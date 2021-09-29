@@ -1,0 +1,22 @@
+
+
+.addpanelistcontainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+.addpanelistcard{
+    background-color: white;
+    position: relative;
+}
+
+.crossicon{
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+}
+.savebtn{
+    text-align: center;
+}
