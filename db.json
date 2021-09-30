@@ -73,12 +73,6 @@
       "id": 15
     },
     {
-<<<<<<< HEAD
-      "name": "hasmi",
-      "email": "hasmi@gmail.com",
-      "phone": "88888888",
-      "id": 16
-=======
       "name": "Manishh",
       "email": "manish@gmail.com",
       "phone": "",
@@ -89,7 +83,6 @@
     {
       "username": "manish@gmail.com",
       "password": "password"
->>>>>>> baf61de3a640fd715519b461f534fd4fa890d0c6
     }
   ]
 }

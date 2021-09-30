@@ -10,8 +10,9 @@ const Routes = fetchRoutes(Containers);
 
 const Application = () => {
   const renderContent = (data) => {
+    const url = ["/login", "/signup"]
     const components = [];
-    if (data.location.pathname == "/login") {
+    if (url.includes(data.location.pathname)) {
       components.push(<Routes />);
     } else {
       components.push(

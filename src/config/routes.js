@@ -14,6 +14,7 @@ const fetchRoutes = (containers) => {
     // Apply,
     ViewPanel,
     Login,
+    SignUp,
     // Notfound,
   } = containers;
 
@@ -25,6 +26,7 @@ const fetchRoutes = (containers) => {
         <AuthRoute exact path="/panelist" component={PanelList} />
         {/* <Route exact path="/jobs" component={Jobs} /> */}
         <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <AuthRoute exact path="/contactus" component={ContactUS} />
         <AuthRoute exact path="/view/:id" component={ViewPanel} />
         {/* <Route exact path="/description" component={Jobdescription} />

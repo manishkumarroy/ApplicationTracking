@@ -54,6 +54,18 @@ const login = (request, history) => (dispatch) => {
     });
 };
 
+const signupuser = (request, history) => (dispatch) => {
+  return nw
+    .api("users")
+    .post(request)
+    .then(() => {
+      login(request, history)(dispatch);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 // Routing
 
 // Reducers
@@ -79,5 +91,6 @@ export default {
     assignToStore,
     resetStore,
     login,
+    signupuser,
   },
 };
