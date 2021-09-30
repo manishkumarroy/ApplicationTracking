@@ -11,16 +11,14 @@ let components;
 
 const LoginController = (props) => {
   const propShape = {
-    store: props.store.homeStore,
-    actions: props.actions.homeActions,
+    store: props.store.authStore,
+    actions: props.actions.authActions,
     history: props.history,
     location: props.location,
   };
 
   useEffect(() => {
-    return () => {
-      propShape.actions.resetStore();
-    };
+    propShape.actions.resetStore();
   }, []);
 
   return (

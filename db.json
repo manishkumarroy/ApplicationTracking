@@ -1,5 +1,5 @@
 {
-  "users": [
+  "panelusers": [
     {
       "id": 4,
       "name": "Abhishek",
@@ -71,6 +71,18 @@
       "email": "test@gmail.com",
       "phone": "1231231231",
       "id": 15
+    },
+    {
+      "name": "Manishh",
+      "email": "manish@gmail.com",
+      "phone": "",
+      "id": 16
+    }
+  ],
+  "users": [
+    {
+      "username": "manish@gmail.com",
+      "password": "password"
     }
   ]
 }
