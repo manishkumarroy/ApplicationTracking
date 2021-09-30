@@ -10,7 +10,10 @@ const SignUpForm = () => {
   const context = useContext(RefContext);
   const { history, actions } = context;
   const onFinish = (values) => {
-    actions.signupuser(values, history)
+    actions.signupuser(
+      { username: values.username, password: values.password },
+      history
+    );
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -53,7 +56,8 @@ const SignUpForm = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item className=" "
+          <Form.Item
+            className=" "
             label="Password"
             name="password"
             rules={[
@@ -66,7 +70,8 @@ const SignUpForm = () => {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item className=" "
+          <Form.Item
+            className=" "
             label="Confirm Password"
             name="confirmPassword"
             rules={[
