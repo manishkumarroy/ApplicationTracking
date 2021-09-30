@@ -4,7 +4,7 @@ import { shape } from "prop-types";
 import RefProvider from "Utilities/refProvider";
 import RefErrorBoundary from "Utilities/refErrorBoundary";
 
-import SignUpForm from "./signUp";
+import SignUpForm from "./SignUpForm";
 
 // eslint-disable-next-line no-unused-vars
 let components;
