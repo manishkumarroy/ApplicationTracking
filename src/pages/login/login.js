@@ -50,7 +50,7 @@ const LoginForm = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item className="boldPass"
+          <Form.Item className=" "
             label="Password"
             name="password"
             rules={[
