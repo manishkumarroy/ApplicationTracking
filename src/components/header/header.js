@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import cookie from "react-cookies";
 
 const HeaderBar = () => {
   return (
@@ -47,7 +48,12 @@ const HeaderBar = () => {
           </ul>
         </div>
         <NavLink className="nav-link" exect to="/login">
-          <button className="btn btn-outline-light">Logout</button>
+          <button
+            className="btn btn-outline-light"
+            onClick={() => cookie.remove("userLoggedIn")}
+          >
+            Logout
+          </button>
         </NavLink>
       </div>
     </nav>

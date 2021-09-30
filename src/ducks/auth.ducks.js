@@ -1,12 +1,13 @@
 import cloneDeep from "lodash/cloneDeep";
 import { setNamespace } from "Utilities/helpers";
 import Network from "Utilities/network";
-const namespace = "home";
+import cookie from "react-cookies";
+const namespace = "auth";
 const createAction = setNamespace(namespace);
 const nw = new Network();
 
 const initialState = {
-  panelUsers: null,
+  currentUser: null,
 };
 
 // ACTIONS
@@ -32,12 +33,21 @@ const resetStore = () => (dispatch) => {
 };
 
 // METHODS
-const getPanelUsers = () => (dispatch) => {
+const login = (request, history) => (dispatch) => {
   return nw
-    .api("panelUsers")
+    .api("users")
     .get()
     .then((response) => {
-      dispatch(assignToStore("panelUsers", response.data));
+      response.data.forEach((element) => {
+        if (
+          element.username == request.username &&
+          element.password == request.password
+        ) {
+          dispatch(assignToStore("currentUser", element));
+          cookie.save("userLoggedIn", true);
+          history.push("/");
+        }
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -47,7 +57,7 @@ const getPanelUsers = () => (dispatch) => {
 // Routing
 
 // Reducers
-const homeReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   const localState = cloneDeep(state);
 
   switch (action.type) {
@@ -64,10 +74,10 @@ const homeReducer = (state = initialState, action) => {
 export default {
   namespace,
   store: initialState,
-  reducer: homeReducer,
+  reducer: authReducer,
   creators: {
     assignToStore,
     resetStore,
-    getPanelUsers,
+    login,
   },
 };

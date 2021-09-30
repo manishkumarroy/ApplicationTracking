@@ -1,5 +1,6 @@
 const development = {
   users: "/users",
+  panelUsers: "/panelusers",
 };
 
 export function getAllEndpoints() {

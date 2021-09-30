@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
 import { Form, Input, Button, Checkbox } from "antd";
 import "./Login.css";
 import dummyLogo from "Assets/image/dummy-logo.png";
+import RefContext from "Utilities/refContext";
 
 const LoginForm = () => {
+  const context = useContext(RefContext);
+  const { history, actions } = context;
   const onFinish = (values) => {
-    console.log("Success:", values);
+    actions.login(values, history)
   };
 
   const onFinishFailed = (errorInfo) => {

@@ -13,7 +13,7 @@ const PanelListPage = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    actions.getUsers();
+    actions.getPanelUsers();
   }, [open]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const PanelListPage = () => {
 
   const deleteUser = async (id) => {
     await axios.delete(`http://localhost:3003/users/${id}`);
-    actions.getUsers();
+    actions.getPanelUsers();
   };
 
   const handleOnClick = () => setOpen(true);
