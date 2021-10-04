@@ -40,7 +40,7 @@ const SignUpForm = () => {
           autoComplete="off"
         >
           <Form.Item
-            className="boldUser"
+            className="boldText"
             label="Email"
             name="username"
             rules={[
@@ -53,7 +53,7 @@ const SignUpForm = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item className=" "
+          <Form.Item className="boldText"
             label="Password"
             name="password"
             rules={[
@@ -66,7 +66,7 @@ const SignUpForm = () => {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item className=" "
+          <Form.Item className="boldText"
             label="Confirm Password"
             name="confirmPassword"
             rules={[

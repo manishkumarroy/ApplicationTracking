@@ -7,6 +7,7 @@ import PanelList from "Pages/panelList";
 import ViewPanel from "Pages/panelList/viewPanelData";
 import Header from "Components/header";
 import SignUp from "Pages/signup";
+import Opening from "Pages/openings";
 
 function Injector(component, deps, name) {
   const hoc = component(deps);
@@ -24,4 +25,6 @@ export default {
   ViewPanel: Injector(ViewPanel, null, "PanelList"),
   // Notfound: Injector(Notfound, null, "Notfound"),
   SignUp: Injector(SignUp, null, "SignUp"),
+  
+  Opening: Injector(Opening, null, "Opening"),
 };

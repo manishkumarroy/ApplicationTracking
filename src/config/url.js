@@ -13,12 +13,13 @@ const getUrl = function (url, params) {
 module.exports = {
   URL_DASHBOARD: "/",
   URL_PANELIST: "/panelist",
-  URL_JOBS: "/jobs",
+  URL_JOBS: "/opening",
   URL_CONTACTUS: "/contactus",
   URL_DESCRIPTION: "/description",
   URL_APPLY: "/apply",
   URL_VIEW: "/view",
   URL_LOGIN: "/login",
+
   routeTo: (url, history, params) => {
     history.push(getUrl(url, params));
   },

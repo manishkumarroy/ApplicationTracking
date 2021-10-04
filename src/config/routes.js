@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import AuthRoute from "./authRoute";
 import { Result } from "antd";
 
-
 const fetchRoutes = (containers) => {
   const {
     Dashboard,
@@ -15,6 +14,7 @@ const fetchRoutes = (containers) => {
     ViewPanel,
     Login,
     SignUp,
+    Opening,
     // Notfound,
   } = containers;
 
@@ -27,6 +27,7 @@ const fetchRoutes = (containers) => {
         {/* <Route exact path="/jobs" component={Jobs} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={SignUp} />
+        <AuthRoute exact path="/opening" component={Opening} />
         <AuthRoute exact path="/contactus" component={ContactUS} />
         <AuthRoute exact path="/view/:id" component={ViewPanel} />
         {/* <Route exact path="/description" component={Jobdescription} />

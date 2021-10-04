@@ -1,16 +1,18 @@
 import React, { useContext } from "react";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button } from "antd";
 import "./Login.css";
 import dummyLogo from "Assets/image/dummy-logo.png";
 import RefContext from "Utilities/refContext";
+
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const context = useContext(RefContext);
   const { history, actions } = context;
   const onFinish = (values) => {
-    actions.login(values, history)
+    actions.login(values, history);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -40,7 +42,7 @@ const LoginForm = () => {
           autoComplete="off"
         >
           <Form.Item
-            className="boldUser"
+            className="boldText"
             label="Username"
             name="username"
             rules={[
@@ -53,7 +55,8 @@ const LoginForm = () => {
             <Input />
           </Form.Item>
 
-          <Form.Item className=" "
+          <Form.Item
+            className="boldText"
             label="Password"
             name="password"
             rules={[
@@ -66,7 +69,7 @@ const LoginForm = () => {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             name="remember"
             valuePropName="checked"
             wrapperCol={{
@@ -75,7 +78,7 @@ const LoginForm = () => {
             }}
           >
             <Checkbox>Remember me</Checkbox>
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item
             wrapperCol={{
@@ -86,6 +89,12 @@ const LoginForm = () => {
             <Button type="primary" htmlType="submit">
               Login
             </Button>
+            <h5>
+              Not a Member ?{" "}
+              <Link style={{ color: "#4341c4" }} exact to="/signup">
+                Sign Up
+              </Link>
+            </h5>
           </Form.Item>
         </Form>
       </div>

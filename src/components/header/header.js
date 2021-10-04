@@ -35,7 +35,7 @@ const HeaderBar = () => {
             </li>
 
             <li className="nav-item ">
-              <NavLink className="nav-link" exact to="/jobs">
+              <NavLink className="nav-link" exact to="/opening">
                 Openings
               </NavLink>
             </li>

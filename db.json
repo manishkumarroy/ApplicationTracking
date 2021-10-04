@@ -77,6 +77,12 @@
       "email": "manish@gmail.com",
       "phone": "",
       "id": 16
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "phone": "88888888",
+      "id": 17
     }
   ],
   "users": [
@@ -84,6 +90,18 @@
       "id": 1,
       "username": "manish@gmail.com",
       "password": "password"
+    },
+    {
+      "username": "arun",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 2
+    },
+    {
+      "username": "archit@gmail.com",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
     }
   ]
 }
