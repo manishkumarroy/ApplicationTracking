@@ -103,5 +103,17 @@
       "confirmPassword": "123",
       "id": 3
     }
+  ],
+  "openings": [
+    {
+      "id": 1,
+      "field": "IT",
+      "designation": "React Developer (Junior)"
+    },
+    {
+      "field": "it",
+      "designation": "react",
+      "id": 2
+    }
   ]
 }

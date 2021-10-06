@@ -56,7 +56,7 @@ const PanelListPage = () => {
             <tr>
               <th scope="col">Id</th>
               <th scope="col">Name</th>
-              <th scope="col">Email</th>
+              <th scope="col">Email</th> 
               <th scope="col">Phone</th>
               {/* <th scope="col">Owner</th> */}
               {/* <th scope="col">Applied Date</th> */}
