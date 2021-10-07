@@ -38,7 +38,14 @@ const Openings = () => {
               Add Jobs <PlusCircleOutlined />
             </div>
           </div>
-          <div style={{ display: "flex", gap: "20px", margin: "20px 0 0 0" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              margin: "20px 0 0 0",
+              flexWrap: "wrap",
+            }}
+          >
             {openings.map((opening) => {
               return (
                 <Card key={opening.id} style={{ width: 200 }}>
