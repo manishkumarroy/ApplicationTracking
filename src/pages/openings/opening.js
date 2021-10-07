@@ -1,60 +1,63 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { Card } from "react-bootstrap";
 import RefContext from "Utilities/refContext";
 import "./opening.css";
 import { PlusCircleOutlined } from "@ant-design/icons";
 
 import Addjobs from "./jobopenings/Addjobs";
+import { Card } from "antd";
 
 const Openings = () => {
   const context = useContext(RefContext);
   const { store, actions } = context;
+  const { allOpenings } = store;
+
+  const [openings, setOpenings] = useState([]);
 
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    console.log(open);
-    // actions.getPanelUsers();
-  }, [open]);
+    actions.getAllOpenings();
+  }, []);
 
-  //   useEffect(() => {
-  //     if (panelUsers) {
-  //       setUsers(panelUsers);
-  //     }
-  //   }, [panelUsers]);
-
-  //   const handleOnClick = () => setOpen(true);
-//   const handleOnclose = () => setOpen(false);
+  useEffect(() => {
+    if (allOpenings) {
+      setOpenings(allOpenings);
+    }
+  }, [allOpenings]);
 
   return (
     <>
-      <div className=" container">
-        <div className="heading">
-          <div
-            onClick={() => setOpen(true)}
-            type="button"
-            className="btn btn-primary btn-lg float-end addJobButton"
-          >
-            Add Jobs <PlusCircleOutlined />
+      <div className="container">
+        <div style={{ display: "flex", flexFlow: "column" }}>
+          <div className="heading">
+            <div
+              onClick={() => setOpen(true)}
+              type="button"
+              className="btn btn-primary btn-lg float-end addJobButton"
+            >
+              Add Jobs <PlusCircleOutlined />
+            </div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card_header">
-            IT
-            <h2>React Developer (junior)</h2>
-          </div>
-          <div className="card_body">
-            {/* <img style={{ width: 50 }} src="business.png" alt="business bag" /> */}
-
-            <Link className="btn btn-primary btn-dark " exact to="/description">
-              Details
-            </Link>
+          <div style={{ display: "flex", gap: "20px", margin: "20px 0 0 0" }}>
+            {openings.map((opening) => {
+              return (
+                <Card key={opening.id} style={{ width: 200 }}>
+                  <div className="card_header">
+                    {opening.field}
+                    <h2>{opening.designation}</h2>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
-      {open && <Addjobs close={() => setOpen(false)} />}
+      {open && (
+        <Addjobs
+          close={() => setOpen(false)}
+          addOpening={(data) => actions.addOpening(data)}
+        />
+      )}
     </>
 
     // <div className="site-card-wrapper">

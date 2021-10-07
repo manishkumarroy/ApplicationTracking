@@ -1,6 +1,7 @@
 const development = {
   users: "/users",
   panelUsers: "/panelusers",
+  openings: "/openings",
 };
 
 export function getAllEndpoints() {

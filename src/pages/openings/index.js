@@ -11,8 +11,8 @@ let components;
 
 const OpeningController = (props) => {
   const propShape = {
-    store: props.store.authStore,
-    actions: props.actions.authActions,
+    store: props.store.openingsStore,
+    actions: props.actions.openingsActions,
     history: props.history,
     location: props.location,
   };

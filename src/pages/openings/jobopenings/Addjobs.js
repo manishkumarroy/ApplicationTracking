@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 import { Modal, Button, Input } from "antd";
-import axios from "axios";
 
-const Addjobs = ({ close }) => {
+const Addjobs = ({ close, addOpening }) => {
   //   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const [job, setJob] = useState({
@@ -24,7 +23,7 @@ const Addjobs = ({ close }) => {
   const onSubmit = async () => {
     // e.preventDefault();
     console.log("job");
-    await axios.post("http://localhost:3003/openings", job);
+    addOpening(job);
     close();
   };
 
