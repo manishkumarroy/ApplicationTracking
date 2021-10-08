@@ -114,6 +114,11 @@
       "field": "IT",
       "designation": "Backend  Developer",
       "id": 2
+    },
+    {
+      "field": "CMS",
+      "designation": "Senior  Architecture",
+      "id": 3
     }
   ]
 }

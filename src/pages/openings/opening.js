@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import RefContext from "Utilities/refContext";
 import "./opening.css";
-import { PlusCircleOutlined } from "@ant-design/icons";
+import { PlusCircleOutlined, CloseOutlined } from "@ant-design/icons";
 
 import Addjobs from "./jobopenings/Addjobs";
 import { Card, Modal } from "antd";
@@ -78,7 +78,7 @@ const Openings = () => {
                     className="crossicon"
                     onClick={() => showConfirm(opening.id)}
                   >
-                    X
+                    <CloseOutlined />
                   </div>
                   <div className="card_header">
                     {opening.field}

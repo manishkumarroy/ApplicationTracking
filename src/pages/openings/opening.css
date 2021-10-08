@@ -59,6 +59,7 @@
     text-align: right;
     cursor: pointer;
     position: absolute;
+    font: icon;
     right: 16px;
     top: 8px;
 }
