@@ -112,23 +112,8 @@
     },
     {
       "field": "IT",
-      "designation": "React Developer  (Senior)",
-      "id": 3
-    },
-    {
-      "field": "IT",
-      "designation": "Frontend  Developer",
-      "id": 4
-    },
-    {
-      "field": "IT",
       "designation": "Backend  Developer",
-      "id": 5
-    },
-    {
-      "field": "CMS",
-      "designation": "Senior  Architecture",
-      "id": 6
+      "id": 2
     }
   ]
 }
