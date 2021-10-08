@@ -4,7 +4,9 @@ import "./opening.css";
 import { PlusCircleOutlined } from "@ant-design/icons";
 
 import Addjobs from "./jobopenings/Addjobs";
-import { Card } from "antd";
+import { Card, Modal } from "antd";
+
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 
 const Openings = () => {
   const context = useContext(RefContext);
@@ -12,6 +14,8 @@ const Openings = () => {
   const { allOpenings } = store;
 
   const [openings, setOpenings] = useState([]);
+
+  const { confirm } = Modal;
 
   const [open, setOpen] = useState(false);
 
@@ -24,6 +28,20 @@ const Openings = () => {
       setOpenings(allOpenings);
     }
   }, [allOpenings]);
+
+  function showConfirm(id) {
+    confirm({
+      title: "Do you Want to delete these items?",
+      icon: <ExclamationCircleOutlined />,
+      onOk() {
+        // console.log('OK');
+        actions.deleteOpening(id);
+      },
+      onCancel() {
+        console.log("Cancel");
+      },
+    });
+  }
 
   return (
     <>
@@ -48,7 +66,20 @@ const Openings = () => {
           >
             {openings.map((opening) => {
               return (
-                <Card key={opening.id} style={{ width: 200 }}>
+                <Card
+                  key={opening.id}
+                  style={{
+                    width: 200,
+                    border: "2px",
+                    backgroundColor: "antiquewhite",
+                  }}
+                >
+                  <div
+                    className="crossicon"
+                    onClick={() => showConfirm(opening.id)}
+                  >
+                    X
+                  </div>
                   <div className="card_header">
                     {opening.field}
                     <h2>{opening.designation}</h2>

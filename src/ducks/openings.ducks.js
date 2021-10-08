@@ -57,6 +57,18 @@ const addOpening = (request) => (dispatch) => {
     });
 };
 
+const deleteOpening = (request) => (dispatch) => {
+  return nw
+    .apiWithPath("deleteOpening", [request])
+    .delete()
+    .then(() => {
+      getAllOpenings()(dispatch);
+    })
+    .catch((error) =>{
+      console.log(error);
+    });
+};
+
 // Routing
 
 // Reducers
@@ -83,5 +95,6 @@ export default {
     resetStore,
     getAllOpenings,
     addOpening,
+    deleteOpening,
   },
 };

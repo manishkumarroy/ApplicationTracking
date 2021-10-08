@@ -1,29 +1,16 @@
 import React, { useState } from "react";
 
-import { Modal, Button, Input } from "antd";
+import { Modal, Button, Input, Form } from "antd";
 
 const Addjobs = ({ close, addOpening }) => {
   //   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [form] = Form.useForm();
 
-  const [job, setJob] = useState({
-    field: "",
-    designation: "",
-  });
+  const onSubmit = (formData) => {
+    //  e.preventDefault();
+    console.log(formData);
 
-  console.log("jobs");
-
-  const { field, designation } = job;
-
-  const onInputChange = (e) => {
-    console.log(e);
-
-    setJob({ ...job, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = async () => {
-    // e.preventDefault();
-    console.log("job");
-    addOpening(job);
+    addOpening(formData);
     close();
   };
 
@@ -45,7 +32,7 @@ const Addjobs = ({ close, addOpening }) => {
         visible={true}
         onCancel={() => close()}
         footer={[
-          <Button onClick={() => onSubmit()} type="primary" key="save">
+          <Button onClick={() => form.submit()} type="primary" key="save">
             Save
           </Button>,
         ]}
@@ -58,26 +45,45 @@ const Addjobs = ({ close, addOpening }) => {
     //     <p>Some contents...</p>
     //     <p>Some contents...</p>
     //     <p>Some contents...</p> */}
-
-        <form>
-          <div className="form-group m-3">
+        <div style={{ marginTop: "40px" }}></div>
+        <Form
+          style={{ border: "none" }}
+          form={form}
+          //   className="loginForm"
+          name="basic"
+          onFinish={onSubmit}
+        >
+          <Form.Item
+            className="boldText"
+            name="field"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter Field !",
+              },
+            ]}
+          >
             <Input
-              placeholder="Add Field"
-              name="field"
-              value={field}
-              onChange={(e) => onInputChange(e)}
+              className="form-control form-control-lg"
+              placeholder="Field"
             />
-          </div>
-          <div className="form-group m-3">
+          </Form.Item>
+          <Form.Item
+            className="boldText"
+            name="designation"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter Designation !",
+              },
+            ]}
+          >
             <Input
               className="form-control form-control-lg"
               placeholder="Designation"
-              name="designation"
-              value={designation}
-              onChange={(e) => onInputChange(e)}
             />
-          </div>
-        </form>
+          </Form.Item>
+        </Form>
       </Modal>
     </>
   );

@@ -2,6 +2,7 @@ const development = {
   users: "/users",
   panelUsers: "/panelusers",
   openings: "/openings",
+  deleteOpening:"/openings/path1",
 };
 
 export function getAllEndpoints() {
